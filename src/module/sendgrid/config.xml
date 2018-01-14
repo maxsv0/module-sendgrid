@@ -20,6 +20,7 @@
 	
 	<file dir="module" path="sendgrid/sendgrid.php"/>
 	<file dir="module" path="sendgrid/config.xml"/>
+	<file dir="content" path="images/module_preview_sendgrid.jpg"/>
 </install>
 
 </document>
