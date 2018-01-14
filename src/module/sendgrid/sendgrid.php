@@ -70,7 +70,7 @@ function EmailSendgrid($to, $subj, $body) {
 function SendgridInstall($module) {
 	
 	// Set Sendgrid options
-    msv_set_config("sendgrid_user", "", true, "*", "Username to connect to api.sendgrid.com");
-    msv_set_config("sendgrid_password", "", true, "*", "Password to connect to api.sendgrid.com");
+    msv_set_config("sendgrid_user", "", true, "*", "Username to connect to api.sendgrid.com", "website");
+    msv_set_config("sendgrid_password", "", true, "*", "Password to connect to api.sendgrid.com", "website");
 	
 }
