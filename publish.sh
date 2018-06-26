@@ -49,7 +49,7 @@ if [ -z "$repositorykey" ]
 fi
 
 if [ ! -f $configinstall ]
-  then=
+  then
     echo "[ERROR] Missing installation config file: $configinstall"
 	exit 0
 fi
