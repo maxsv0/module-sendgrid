@@ -9,7 +9,7 @@
 
 <install>
 	<param name="name" value="sendgrid"/>
-	<param name="version" value="1.2.2"/>
+	<param name="version" value="1.2.3"/>
 	<param name="date" value="26.06.2018"/>
 	<param name="title" value="Sendgrid"/>
 	<param name="description" value="Email service integration for sendgrid.com"/>
