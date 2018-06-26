@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 #
 # Module publishing tool for MSV Repository
 #
@@ -16,7 +18,7 @@ repositoryurl=http://rep.msvhost.com/api/import/
 modulename=sendgrid
 repositorykey=$1
 configinstall=src/module/$modulename/config.xml
-previewfile=src/content/images/module_preview_$modulename.jpg
+previewfile=src/content/images/module_preview/$modulename.jpg
 
 if [ -z "$modulename" ]
   then
@@ -47,7 +49,7 @@ if [ -z "$repositorykey" ]
 fi
 
 if [ ! -f $configinstall ]
-  then
+  then=
     echo "[ERROR] Missing installation config file: $configinstall"
 	exit 0
 fi
@@ -60,7 +62,13 @@ fi
 
 echo "========> Module: $modulename (key :  $repositorykey)"
 echo "Sending file to repository.."
-curl -F "file=@$modulename.zip" -F "preview=@$previewfile" -F "config=@$configinstall" -F "module=$modulename" -F "key=$repositorykey" $repositoryurl
+response=$(curl -F "file=@$modulename.zip" -F "preview=@$previewfile" -F "config=@$configinstall" -F "module=$modulename" -F "key=$repositorykey" $repositoryurl)
+echo $response
 
-rm $modulename.zip
+if [[ $response = *"[ERROR]"* ]]; then
+    echo "[ERROR] has occurred"
+    exit 1
+fi
+
+echo "[SUCCESS] upload successfully!"
 exit 0
