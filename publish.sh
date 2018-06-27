@@ -23,7 +23,7 @@ previewfile=src/content/images/module_preview_$modulename.jpg
 if [ -z "$modulename" ]
   then
     echo "[ERROR] Missing Module name"
-	exit 0
+	exit 1
 fi
 
 mkdir src-temp
@@ -45,19 +45,19 @@ echo "Publish archive to MSV repository: $repositoryurl"
 if [ -z "$repositorykey" ]
   then
     echo "[ERROR] Missing repository KEY"
-	exit 0
+	exit 1
 fi
 
 if [ ! -f $configinstall ]
   then
     echo "[ERROR] Missing installation config file: $configinstall"
-	exit 0
+	exit 1
 fi
 
 if [ ! -f $previewfile ];
 	then
       echo "[ERROR] Preview file $previewfile was not found"
-	  exit 0
+	  exit 1
 fi
 
 echo "========> Module: $modulename (key :  $repositorykey)"
