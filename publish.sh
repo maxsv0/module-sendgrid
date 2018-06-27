@@ -18,7 +18,7 @@ repositoryurl=http://rep.msvhost.com/api/import/
 modulename=sendgrid
 repositorykey=$1
 configinstall=src/module/$modulename/config.xml
-previewfile=src/content/images/module_preview_$modulename.jpg
+previewfile=src/content/images/module_preview/$modulename.jpg
 
 if [ -z "$modulename" ]
   then
@@ -71,6 +71,4 @@ if [[ $response = *"[ERROR]"* ]]; then
 fi
 
 echo "[SUCCESS] upload successfully!"
-
-rm $modulename.zip
 exit 0
