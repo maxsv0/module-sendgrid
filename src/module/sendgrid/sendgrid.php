@@ -24,13 +24,13 @@ function EmailSendgrid($to, $subj, $body) {
 	$sendgridFromName = msv_get_config("email_fromname");
 
 	if (empty($sendgridUser)) {
-		return false;
+		return "fail:EmailSendgrid:EmptyUser";
 	}
 	if (empty($sendgridPassword)) {
-		return false;
+		return "fail:EmailSendgrid:EmptyPassword";
 	}
 	if (empty($sendgridFrom)) {
-		return false;
+		return "fail:EmailSendgrid:EmptyFrom";
 	}
 	if (empty($sendgridFromName)) {
 		$sendgridFromName = "";
